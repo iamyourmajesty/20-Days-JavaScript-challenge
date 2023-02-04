@@ -116,3 +116,20 @@ button:active{
         font-size: 2.5rem;
     }
 }
+
+
+@media screen and (max-width:500px)
+{
+    .quote-container{
+        margin: auto 10px;
+
+    }
+
+    .long-quote{
+        font-size: 0.7rem;
+        font-weight: 700;
+    }
+    .quote-text{
+        font-size: 1.2rem;
+    }
+}
