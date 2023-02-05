@@ -23,7 +23,7 @@ function imageLoaded() {
 
         // to increase performance we load only 15 photos at start
         count = 30;
-        page= Math.floor(Math.random()*50 );
+        page= Math.ceil(Math.random()*50 );
         url=`https://picsum.photos/v2/list?page=${page}&limit=${count}`;
 
         
