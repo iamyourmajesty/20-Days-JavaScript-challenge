@@ -7,8 +7,9 @@ let totalImages = 0;
 let photosArray = [];
 
 // we will fetch the images using specifice api
-const count = 10;
-const url=`https://picsum.photos/v2/list?page=2&limit=${count}`;
+let count = 15;
+let page=Math.floor(Math.random()*50 );
+const url=`https://picsum.photos/v2/list?page=${page}&limit=${count}`;
 
 // check if images were loaded
 function imageLoaded() {
@@ -20,9 +21,10 @@ function imageLoaded() {
         loader.hidden = true;
         // console.log('ready',ready);
 
-        // to increase performance we load only 10 photos at start
+        // to increase performance we load only 15 photos at start
         count = 30;
-        url=`https://picsum.photos/v2/list?page=2&limit=${count}`;
+        page= Math.floor(Math.random()*50 );
+        url=`https://picsum.photos/v2/list?page=${page}&limit=${count}`;
 
         
     }
