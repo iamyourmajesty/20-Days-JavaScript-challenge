@@ -15,7 +15,7 @@ const key = 'iVtqce0xVRpikxB7-BeBe2wbKH9ljn8dteUhNNvfrkU';
 let count = 20;
 
 // const url=`https://picsum.photos/v2/list?page=2&limit=${count}`;
-const url = `https://api.unsplash.com/photos/random/?client_id=${key}&limit=${count}`;
+const url = `https://api.unsplash.com/photos/random/?client_id=${key}&count=${count}`;
 
 // check if images were loaded
 function imageLoaded() {
@@ -29,7 +29,7 @@ function imageLoaded() {
 
         // to increase performance we load only 20 photos at start
         count = 30;
-        url = `https://api.unsplash.com/photos/random/?client_id=${key}&limit=${count}`;
+        url = `https://api.unsplash.com/photos/random/?client_id=${key}&count=${count}`;
 
         
     }
