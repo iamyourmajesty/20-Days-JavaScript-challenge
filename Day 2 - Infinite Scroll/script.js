@@ -1,3 +1,4 @@
+
 const imageContainer = document.getElementById('image-container');
 const loader = document.getElementById('loader');
 
@@ -6,10 +7,15 @@ let imagesLoaded = 0;
 let totalImages = 0;
 let photosArray = [];
 
+const key = 'iVtqce0xVRpikxB7-BeBe2wbKH9ljn8dteUhNNvfrkU'; 
+// get you own key from unsplash api
+
+
 // we will fetch the images using specifice api
 let count = 15;
-let page=Math.floor(Math.random()*50 );
-const url=`https://picsum.photos/v2/list?page=${page}&limit=${count}`;
+
+// const url=`https://picsum.photos/v2/list?page=2&limit=${count}`;
+const url = `https://api.unsplash.com/photos/?client_id=${key}&limit=${count}`
 
 // check if images were loaded
 function imageLoaded() {
@@ -23,8 +29,7 @@ function imageLoaded() {
 
         // to increase performance we load only 15 photos at start
         count = 30;
-        page= Math.ceil(Math.random()*50 );
-        url=`https://picsum.photos/v2/list?page=${page}&limit=${count}`;
+        url=`https://picsum.photos/v2/list?page=2&limit=${count}`;
 
         
     }
@@ -39,12 +44,12 @@ function displayPhotos() {
     photosArray.forEach((photo)=>{
         // create a to link to unsplash
         const item = document.createElement('a');
-        item.setAttribute('href',photo.download_url);
+        item.setAttribute('href',photo.links.html);
         
 
         //create image
         const img = document.createElement('img');
-        img.setAttribute('src',photo.download_url);
+        img.setAttribute('src',photo.urls.regular);
         
         img.addEventListener('load',imageLoaded);
 
