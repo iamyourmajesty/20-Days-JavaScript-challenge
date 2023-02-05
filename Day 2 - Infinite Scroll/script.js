@@ -12,7 +12,7 @@ const key = 'iVtqce0xVRpikxB7-BeBe2wbKH9ljn8dteUhNNvfrkU';
 
 
 // we will fetch the images using specifice api
-let count = 20;
+let count = 10;
 
 // const url=`https://picsum.photos/v2/list?page=2&limit=${count}`;
 const url = `https://api.unsplash.com/photos/random/?client_id=${key}&count=${count}`;
@@ -27,7 +27,7 @@ function imageLoaded() {
         loader.hidden = true;
         // console.log('ready',ready);
 
-        // to increase performance we load only 20 photos at start
+        // to increase performance we load only 10 photos at start
         count = 30;
         url = `https://api.unsplash.com/photos/random/?client_id=${key}&count=${count}`;
 
