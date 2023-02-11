@@ -56,7 +56,7 @@ const Audios = [
         count : '6',
         displayName : "Shape of You",
         artist : 'Ed Sheeran',
-        songUrl : 'https://res.cloudinary.com/du1n94yvw/video/upload/v1676123773/New/song_6_sdtysu.mp3',
+        songUrl : 'https://res.cloudinary.com/du1n94yvw/video/upload/v1676124952/New/song_6_rhkdcg.mp3',
         imgUrl : 'https://res.cloudinary.com/du1n94yvw/image/upload/v1676123650/New/image_6_wul3pg.jpg'
     },
     {
