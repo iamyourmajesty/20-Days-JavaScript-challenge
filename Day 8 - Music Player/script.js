@@ -20,27 +20,72 @@ const Audios = [
     {
         count : '1',
         displayName : 'Despacito',
-        artist : 'Luis Fonsi'
+        artist : 'Luis Fonsi',
+        songUrl : 'https://res.cloudinary.com/du1n94yvw/video/upload/v1676119287/New/song_1_othth6.mp3',
+        imgUrl : 'https://res.cloudinary.com/du1n94yvw/image/upload/v1676119493/New/image_1_trrqyd.jpg'
     },
     {
         count : '2',
         displayName : "Don't Let Me Down",
-        artist : 'The Chainsmokers'
+        artist : 'The Chainsmokers',
+        songUrl : 'https://res.cloudinary.com/du1n94yvw/video/upload/v1676119394/New/song_2_avvx8m.mp3',
+        imgUrl : 'https://res.cloudinary.com/du1n94yvw/image/upload/v1676119494/New/image_2_ecmvb5.jpg'
     },
     {
         count : '3',
         displayName : 'Memories',
-        artist : 'Maroon 5'
+        artist : 'Maroon 5',
+        songUrl : 'https://res.cloudinary.com/du1n94yvw/video/upload/v1676119332/New/song_3_wiq52p.mp3',
+        imgUrl : 'https://res.cloudinary.com/du1n94yvw/image/upload/v1676119494/New/image_3_wfxbcw.jpg'
     },
     {
         count : '4',
         displayName : 'Paradise',
-        artist : 'Coldplay'
+        artist : 'Coldplay',
+        songUrl : 'https://res.cloudinary.com/du1n94yvw/video/upload/v1676119044/New/song_4_tv2itp.mp3',
+        imgUrl : 'https://res.cloudinary.com/du1n94yvw/image/upload/v1676119496/New/image_4_srblv6.webp'
     },
     {
         count : '5',
         displayName : 'Peaches',
-        artist : 'Justin Bieber'
+        artist : 'Justin Bieber',
+        songUrl : 'https://res.cloudinary.com/du1n94yvw/video/upload/v1676119438/New/song_5_qmd37f.mp3',
+        imgUrl : 'https://res.cloudinary.com/du1n94yvw/image/upload/v1676119496/New/image_5_us5bwl.jpg'
+    },
+    {
+        count : '6',
+        displayName : "Shape of You",
+        artist : 'Ed Sheeran',
+        songUrl : 'https://res.cloudinary.com/du1n94yvw/video/upload/v1676123773/New/song_6_sdtysu.mp3',
+        imgUrl : 'https://res.cloudinary.com/du1n94yvw/image/upload/v1676123650/New/image_6_wul3pg.jpg'
+    },
+    {
+        count : '7',
+        displayName : "Let Me Love You",
+        artist : 'DJ Snake',
+        songUrl : 'https://res.cloudinary.com/du1n94yvw/video/upload/v1676123685/New/song_7_tvb9yo.mp3',
+        imgUrl : 'https://res.cloudinary.com/du1n94yvw/image/upload/v1676123650/New/image_7_pwc2ud.jpg'
+    },
+    {
+        count : '8',
+        displayName : "I'm the One",
+        artist : 'Justin Bieber',
+        songUrl : 'https://res.cloudinary.com/du1n94yvw/video/upload/v1676123724/New/song_8_x5ckpg.mp3',
+        imgUrl : 'https://res.cloudinary.com/du1n94yvw/image/upload/v1676123650/New/image_8_ntxli5.jpg'
+    },
+    {
+        count : '9',
+        displayName : "Faded",
+        artist : 'Alan Walker',
+        songUrl : 'https://res.cloudinary.com/du1n94yvw/video/upload/v1676123683/New/song_9_v3rucv.mp3',
+        imgUrl : 'https://res.cloudinary.com/du1n94yvw/image/upload/v1676123650/New/image_9_viosuf.jpg'
+    },
+    {
+        count : '10',
+        displayName : "Replay",
+        artist : 'Iyaz',
+        songUrl : 'https://res.cloudinary.com/du1n94yvw/video/upload/v1676123744/New/song_10_vjhesg.mp3',
+        imgUrl : 'https://res.cloudinary.com/du1n94yvw/image/upload/v1676123650/New/image_10_jcjuq9.jpg'
     }
 ];
 
@@ -175,8 +220,9 @@ progressContainer.addEventListener('click',playAudio);
 function loadSong(song) {
     title.textContent = song.displayName;
     artist.textContent = song.artist;
-    Audio.src = `music/song_${song.count}.mp3`;
-    image.src = `img/image_${song.count}.jpg`;
+    
+    Audio.src = song.songUrl;
+    image.src = song.imgUrl;
 }
 
 //current song
