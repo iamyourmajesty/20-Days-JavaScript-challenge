@@ -288,3 +288,7 @@ select > option {
     border-radius: 0;
   }
 }
+
+.fas{
+  margin-right: 5px;
+}

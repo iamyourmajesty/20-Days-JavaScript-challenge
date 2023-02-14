@@ -16,6 +16,30 @@ const fullscreenBtn = document.querySelector('.fullscreen');
 
 const speed = document.querySelector('.player-speed');
 
+let videoIndex = 0;
+const Videos = [
+  {
+     videoURL : 'https://res.cloudinary.com/du1n94yvw/video/upload/v1676394397/New/Tom_Jerry___Balloon_Blowing_Party___WB_Kids_svzha7.mp4',
+  },
+  {
+      videoURL : 'https://res.cloudinary.com/du1n94yvw/video/upload/v1676396601/New/Oggy_and_the_Cockroaches__Next_Generation_--%E0%A4%B9%E0%A4%BF%E0%A4%82%E0%A4%A6%E0%A5%80_%E0%A4%85%E0%A4%B5%E0%A4%BF%E0%A4%B6%E0%A5%8D%E0%A4%B5%E0%A4%B8%E0%A4%A8%E0%A5%80%E0%A4%AF_Hindi_Cartoons_for_Kids_ebs9hy.mp4',
+  },
+  {
+    videoURL : 'https://res.cloudinary.com/du1n94yvw/video/upload/v1676397366/New/tomp3.cc_-_The_Tom_and_Jerry_Show_Tom_The_Gym_Cat_Boomerang_UK__720p_dmmsd1.mp4',
+  },
+  {
+    videoURL : 'https://res.cloudinary.com/du1n94yvw/video/upload/v1676397388/New/tomp3.cc_-_Tom_Jerry_The_Lucky_Penny_Boomerang_UK_720p_tzy9ud.mp4',
+  },
+  {
+    videoURL : 'https://res.cloudinary.com/du1n94yvw/video/upload/v1676397508/New/tomp3.cc_-_%E0%A4%B9%E0%A4%A6_Oggy_and_the_Cockroaches_Sports_Fans_S04E26_Hindi_Cartoons_for_Kids_480p_acdeme.mp4',
+  }
+
+];
+
+
+const nextBtn = document.getElementById('next');
+const prevBtn = document.getElementById('prev');
+
 // Play & Pause 
 
 function tooglePlay() {
@@ -54,8 +78,18 @@ function updateProgress() {
     ProgressBar.style.width = `${(video.currentTime/video.duration) * 100}%`;
 
     //populate the current time and duration
-    currentTime.textContent = `${displayTime(video.currentTime)}/`;;
-    duration.textContent = `${displayTime(video.duration)}`;
+    if(currentTime)
+    {
+      currentTime.textContent = `${displayTime(video.currentTime)}/`;
+    }
+    
+    if(duration)
+    {
+      duration.textContent = `${displayTime(video.duration)}`;
+
+    }
+
+    
     
 }
 // click to seek within the video
@@ -192,6 +226,13 @@ function toggleFullscreen() {
 }
 
 
+// Update Dom
+function loadVideo(vid) {
+  video.src = vid.videoURL;
+}
+
+
+
 //Event Listners
 playBtn.addEventListener('click',tooglePlay);
 video.addEventListener('click',tooglePlay);
@@ -207,3 +248,35 @@ speed.addEventListener('change',changeSpeed);
 
 fullscreenBtn.addEventListener('click',toggleFullscreen);
 
+
+
+// Next function
+function nextVideo() {
+  // console.log("nextvid");
+  videoIndex++;
+  if(videoIndex > Videos.length - 1)
+  {
+      videoIndex = 0;
+  }
+  loadVideo(Videos[videoIndex]);
+  tooglePlay();
+
+}
+
+// Prev function
+function prevVideo() {
+  // console.log('prev vid');
+  videoIndex--;
+  if(videoIndex < 0)
+  {
+      videoIndex = Videos.length - 1;
+  }
+  loadSong(Videos[videoIndex]);
+  tooglePlay();
+
+}
+
+nextBtn.addEventListener('click',nextVideo);
+prevBtn.addEventListener('click',nextVideo);
+
+loadVideo(Videos[0]);
