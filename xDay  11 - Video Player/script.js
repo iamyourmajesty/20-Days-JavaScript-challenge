@@ -178,11 +178,19 @@ function changeSpeed() {
 
 // Fullscreen 
 
+function makeLandscape() {
+  // this works on android, not iOS
+  if (screen.orientation && screen.orientation.lock) {
+    screen.orientation.lock('landscape');
+  }
+}
+
 
 /* View in fullscreen */
 function openFullscreen(element) {
     if (element.requestFullscreen) {
       element.requestFullscreen();
+      
     } else if (element.mozRequestFullScreen) {
       /* Firefox */
       element.mozRequestFullScreen();
@@ -194,6 +202,8 @@ function openFullscreen(element) {
       element.msRequestFullscreen();
     }
     video.classList.add('video-fullscreen');
+    makeLandscape();
+    
   }
   
   /* Close fullscreen */
