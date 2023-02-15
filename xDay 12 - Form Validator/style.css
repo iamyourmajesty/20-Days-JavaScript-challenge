@@ -104,3 +104,17 @@ button:focus {
   justify-content: center;
   color: black;
 }
+
+/* Media Query: Large Smartphone (Vertical) */
+@media screen and (max-width: 600px) {
+  .container {
+    height: 100vh;
+  }
+  .form-group{
+    height: 63px;
+  }
+  button{
+    height: 40px;
+    margin-top: 10px;
+  }
+}
