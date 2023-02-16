@@ -178,5 +178,3 @@ window.select = select;
 
 resetAll();
 
-
-startConfetti();
