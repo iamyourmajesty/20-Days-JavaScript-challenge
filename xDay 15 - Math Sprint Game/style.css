@@ -288,6 +288,7 @@ button:active {
     background-repeat: no-repeat;
     background-size: cover;
     
+    
   }
   .game-container {
     width: 100%;
@@ -336,4 +337,5 @@ button:active {
   .best-score {
     left: 232px;
   }
+  
 }
