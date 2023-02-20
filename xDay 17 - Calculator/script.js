@@ -72,6 +72,8 @@ function clearOne() {
         expression = expression.slice(0, -1);
         InputContainer.value = expression;
     }
+    if(expression.length === 0)
+    InputContainer.value= '0';
     
 }
 
