@@ -29,6 +29,7 @@ function addDecimal() {
                 // include decimal and break  
                 // to handel 1.2 + 1.5
                 expression += '.';
+                InputContainer.value = expression;
                 break;
             }
         }
