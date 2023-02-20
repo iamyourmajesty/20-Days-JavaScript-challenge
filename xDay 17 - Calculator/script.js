@@ -3,8 +3,9 @@ const Buttons = document.querySelectorAll('.exreq');
 const InputContainer = document.querySelector('input');
 
 let k = true;
+let expression ='';
 
-// to add decimal in expression
+// to deal with multiple decimal in expression 
 function addDecimal() {
     if(!expression.includes('.'))
     {
@@ -42,16 +43,8 @@ Buttons.forEach((btn) =>{
             // these will lead to remove the last operator and in further step we will add new clicked operator
             expression = expression.slice(0, -1);
         }
-
-                
-        // to deal with multiple decimal in expression 
-        if(temp === '.')
-        {
-            addDecimal();
-        }
-        else {
-            expression += temp;
-        }
+        
+        expression += temp;        
         
         // console.log(temp,expression);
         InputContainer.value = expression;
