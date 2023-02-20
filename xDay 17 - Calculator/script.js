@@ -68,6 +68,7 @@ function clearOne() {
     if(expression != '')
     {
         // remove last char
+        expression = InputContainer.value; 
         expression = expression.slice(0, -1);
         InputContainer.value = expression;
     }
