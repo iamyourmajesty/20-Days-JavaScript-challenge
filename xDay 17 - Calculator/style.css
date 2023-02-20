@@ -75,18 +75,20 @@ input{
     
     button{
         font-size: 1.1;
-        height: 40px;
-        width: 40px;
+        height: 50px;
+        width: 50px;
+        box-shadow: none;
         
     }
 
     .container{
         width: 80vw;
-        height: 60vh;
+        height: 70vh;
+        box-shadow: none;
     }
     
     input{
-        width: 200px!important;
+        width: 236px!important;
         /* height: 10px; */
         font-size: 1rem;
         border: 2px solid white;
