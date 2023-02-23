@@ -217,9 +217,8 @@ function animate() {
   gameOver(); 
   if(!isGameOver)
   {    
-      window.requestAnimationFrame(animate);    
+      window.requestAnimationFrame(animate);   
   }
- 
   
 }
 
